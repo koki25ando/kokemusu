@@ -115,6 +115,14 @@
   .btn svg { width: 18px; height: 18px; fill: currentColor; }
   .btn.small { padding: 8px 18px; font-size: 0.9rem; box-shadow: none; }
   .note { color: var(--muted); font-size: 0.85rem; margin: 14px 0 0; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; }
+  .closing .stores { justify-content: center; }
+  .top-links { display: flex; gap: 8px; }
+  .btn { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .top-links { gap: 6px; }
+    .top-links .btn.small { padding: 6px 12px; font-size: 0.78rem; }
+  }
 
   /* 端末の枠 */
   .phone {
@@ -272,7 +280,10 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#"><img src="img/icon.png" alt="">Kokemusu <small>苔むす</small></a>
-    <a class="btn small" href="https://apps.apple.com/jp/app/id6831399217">App Store</a>
+    <div class="top-links">
+      <a class="btn small" href="https://apps.apple.com/jp/app/id6831399217">App Store</a>
+      <a class="btn small" href="https://play.google.com/store/apps/details?id=com.kokemusu.app">Google Play</a>
+    </div>
   </div>
 </header>
 
@@ -286,11 +297,17 @@
         <h1 class="rise d1"><span>スマホを置いた時間が、</span><span>育っていく。</span></h1>
         <p class="lead rise d2">SNS をつい開いてしまう毎日に。見なかった時間は「しずく」になって、ガラス瓶の苔を育てます。そして、あなたの夜と朝も。</p>
         <div class="rise d2">
+          <div class="stores">
           <a class="btn" href="https://apps.apple.com/jp/app/id6831399217">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.17-1.53 2.66-.39 6.59 1.1 8.74.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.83-1.22 1.18-2.4 1.2-2.46-.03-.01-2.29-.88-2.31-3.5zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.67-.92 2.66.97.08 1.96-.49 2.56-1.21z"/></svg>
             App Store で無料ダウンロード
           </a>
-          <p class="note">iPhone 版 配信中（iOS 17 以降）／ Android 版は準備中</p>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.kokemusu.app">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.1.9.4 1.2L13.8 12zM17.2 15.4 13.8 12l3.4-3.4 4.1 2.3c1.1.6 1.1 1.7 0 2.3zM16.9 15.6 13.8 12 3.6 22.2c.4.4 1 .4 1.7 0zM16.9 8.4 5.3 1.8c-.7-.4-1.3-.4-1.7 0L13.8 12z"/></svg>
+            Google Play で無料ダウンロード
+          </a>
+          </div>
+          <p class="note">iPhone 版（iOS 17 以降）・Android 版（Android 8.0 以降）配信中</p>
         </div>
       </div>
       <div class="hero-visual rise d1">
@@ -425,8 +442,8 @@
       <p class="eyebrow">安心して使えるように</p>
       <h2>あなたの時間は、<br>あなたの手元に。</h2>
       <div class="promises">
-        <div class="card"><h3>データは端末の中だけ</h3><p>記録や設定は iPhone の中にだけ保存し、外部に送りません。</p></div>
-        <div class="card"><h3>見ている内容は受け取らない</h3><p>Apple のスクリーンタイムの仕組みを使うため、選んだアプリの名前や閲覧内容を Kokemusu が知ることはありません。</p></div>
+        <div class="card"><h3>データは端末の中だけ</h3><p>記録や設定はスマホの中にだけ保存し、外部に送りません。</p></div>
+        <div class="card"><h3>見ている内容は受け取らない</h3><p>iPhone では Apple のスクリーンタイムの仕組みを使うため、選んだアプリの名前や閲覧内容を Kokemusu が知ることはありません。Android でも、見るのは「どのアプリやサイトを開いたか」だけで、画面の内容や入力した文字は読み取りません。</p></div>
         <div class="card"><h3>広告はありません</h3><p>あなたの時間を奪うものを、このアプリに入れることはしません。</p></div>
       </div>
     </div>
@@ -468,11 +485,17 @@
       <img class="icon" src="img/icon.png" alt="Kokemusu のアイコン">
       <h2>スマホを置いた時間が、<br>育っていく。</h2>
       <p class="lead">苔むすほど、ゆっくりでいい。今夜から、ひとつずつ。</p>
+      <div class="stores">
       <a class="btn" href="https://apps.apple.com/jp/app/id6831399217">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.17-1.53 2.66-.39 6.59 1.1 8.74.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.83-1.22 1.18-2.4 1.2-2.46-.03-.01-2.29-.88-2.31-3.5zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.67-.92 2.66.97.08 1.96-.49 2.56-1.21z"/></svg>
         App Store で無料ダウンロード
       </a>
-      <p class="note">iPhone 版 配信中 ／ Android 版は準備中</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.kokemusu.app">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.1.9.4 1.2L13.8 12zM17.2 15.4 13.8 12l3.4-3.4 4.1 2.3c1.1.6 1.1 1.7 0 2.3zM16.9 15.6 13.8 12 3.6 22.2c.4.4 1 .4 1.7 0zM16.9 8.4 5.3 1.8c-.7-.4-1.3-.4-1.7 0L13.8 12z"/></svg>
+        Google Play で無料ダウンロード
+      </a>
+      </div>
+      <p class="note">iPhone 版・Android 版 配信中</p>
     </div>
   </section>
 
