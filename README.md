@@ -6,4 +6,5 @@ https://koki25ando.github.io/kokemusu/ で公開している。
 
 ```bash
 python3 build_privacy.py ../android/docs/play-store/privacy-policy.md > privacy/index.html
+python3 build_privacy.py ../android/docs/play-store/privacy-policy-en.md en > privacy/en/index.html
 ```
