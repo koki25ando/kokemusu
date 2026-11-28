@@ -1,4 +1,6 @@
 import re, sys, html
+# usage: build_privacy.py <source.md> [lang]  (lang defaults to ja)
+LANG = sys.argv[2] if len(sys.argv) > 2 else "ja"
 src = open(sys.argv[1], encoding="utf-8").read().strip().split("\n")
 def inline(t):
     t = html.escape(t, quote=False)
@@ -33,7 +35,7 @@ while i < len(src):
     i += 1
 body = "\n".join(out)
 print(f"""<!doctype html>
-<html lang="ja">
+<html lang="{LANG}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
