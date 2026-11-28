@@ -6,6 +6,8 @@
 <title>Kokemusu（苔むす）｜スマホを置いた時間が、育っていく。</title>
 <meta name="description" content="SNS をつい開いてしまう毎日に。見なかった時間はしずくになって、ガラス瓶の苔を育てます。">
 <link rel="icon" href="img/icon.png">
+<link rel="alternate" hreflang="ja" href="https://koki25ando.github.io/kokemusu/">
+<link rel="alternate" hreflang="en" href="https://koki25ando.github.io/kokemusu/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&display=swap" rel="stylesheet">
@@ -117,11 +119,21 @@
   .note { color: var(--muted); font-size: 0.85rem; margin: 14px 0 0; }
   .stores { display: flex; flex-wrap: wrap; gap: 12px; }
   .closing .stores { justify-content: center; }
-  .top-links { display: flex; gap: 8px; }
+  .top-links { display: flex; gap: 8px; align-items: center; }
+  .lang { color: var(--muted); text-decoration: none; font-size: 0.85rem; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; }
+  .lang:hover { color: var(--ink); }
+  .lang .short { display: none; }
+  @media (max-width: 480px) { .lang .short { display: inline; } }
+  @media (max-width: 360px) { header.top .brand { font-size: 0; } }
   .btn { white-space: nowrap; }
   @media (max-width: 480px) {
-    .top-links { gap: 6px; }
-    .top-links .btn.small { padding: 6px 12px; font-size: 0.78rem; }
+    header.top .wrap { gap: 8px; }
+    .top-links { gap: 5px; }
+    .top-links .btn.small { padding: 6px 10px; font-size: 0.76rem; }
+    .lang { padding: 3px 7px; font-size: 0.72rem; }
+    .lang .long { display: none; }
+    .brand { gap: 6px; font-size: 0.95rem; }
+    .brand img { width: 28px; height: 28px; }
   }
 
   /* 端末の枠 */
@@ -179,6 +191,19 @@
     font-size: clamp(3rem, 12vw, 6rem);
     color: rgba(230, 232, 223, 0.14);
     line-height: 1; margin: 0 0 24px; letter-spacing: 0.06em;
+  }
+
+  /* 動画 */
+  .film .wrap { display: grid; grid-template-columns: 1fr 320px; gap: 56px; align-items: center; max-width: 900px; }
+  .film video {
+    display: block; width: 100%; aspect-ratio: 9 / 16;
+    border-radius: 24px; background: #121611;
+    box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.6);
+  }
+  .film .source { color: var(--night-muted); }
+  @media (max-width: 860px) {
+    .film .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .film video { max-width: 300px; margin: 0 auto; }
   }
 
   /* 育つもの2つ */
@@ -281,6 +306,7 @@
   <div class="wrap">
     <a class="brand" href="#"><img src="img/icon.png" alt="">Kokemusu <small>苔むす</small></a>
     <div class="top-links">
+      <a class="lang" href="en/" hreflang="en" lang="en" aria-label="English"><span class="long">English</span><span class="short">EN</span></a>
       <a class="btn small" href="https://apps.apple.com/jp/app/id6831399217">App Store</a>
       <a class="btn small" href="https://play.google.com/store/apps/details?id=com.kokemusu.app">Google Play</a>
     </div>
@@ -346,6 +372,20 @@
         </div>
       </div>
       <p class="kokemusu"><strong>苔むす</strong> ─ 苔は、触れずに静かに置いておくほど、時間をかけて育つ植物です。スマホを置いた時間も、すぐには変わらなくても、ちゃんと積み重なっていきます。</p>
+    </div>
+  </section>
+
+  <!-- 動画 -->
+  <section class="night film">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">30秒で見る Kokemusu</p>
+        <h2>コーヒー1杯ぶん、<br>スマホを置いてみる。</h2>
+        <p class="lead">開こうとした瞬間のひと呼吸から、瓶の苔が育つまで。Kokemusu のある一日を、30秒の動画にしました。</p>
+      </div>
+      <video controls playsinline preload="none" poster="video/poster.jpg" aria-label="Kokemusu の紹介動画（30秒）">
+        <source src="video/kokemusu-pr.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
@@ -507,6 +547,7 @@
     <span class="footer-links">
       <a href="mailto:kokemusu.app@gmail.com?subject=Kokemusu%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">お問い合わせ</a>
       <a href="privacy/">プライバシーポリシー</a>
+      <a href="en/" hreflang="en" lang="en">English</a>
     </span>
   </div>
   <div class="wrap contact">
